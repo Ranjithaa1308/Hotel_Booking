@@ -1,0 +1,55 @@
+<!-- two way binding -->
+<header>
+    <nav class="navbar navbar-expand-md navbar-dark bg-primary  center">
+        <div>
+            <i class='fas fa-shipping-fast Color-white' style='font-size:24px '></i>
+            <strong>
+                <h1><a class="navbar-brand text-white"> ADD HOTEL</a></h1>
+            </strong>
+        </div>
+    </nav>
+</header>
+
+<div class="body">
+
+    <div class="container">
+        <!-- <button (click)="goBack()" class="btn btn-primary">Go Back</button> -->
+        <div class="row justify-content-center">
+            <div class="col-md-5 border p-5 center">
+                <form class="w-100" #hotelForm="ngForm" (ngSubmit)="addhotel()" novalidate>
+                    <h2 class="text-center fs-1"><b>ADD HOTEL</b></h2><br>
+
+                    <label><b>Hotel Name</b></label><br>
+                    <input class="form-control" placeholder="Hotel name" type="text" name="hotelName" [(ngModel)]="hotel.hname" minlength="3" maxlength="45" required /><br><br>
+
+                    <label><b>Address</b> </label><br>
+                    <input class="form-control" placeholder="Address" type="text" name="address" [(ngModel)]="hotel.haddress" required /><br><br>
+
+                    <label><b>City</b> </label><br>
+                    <input class="form-control" placeholder="City" type="text" name="City" [(ngModel)]="hotel.hcity" required /><br><br>
+
+                    <label><b>Mobile number</b></label><br>
+                    <input class="form-control" placeholder="Mobile number" type="tel" name="mobileNumber" [(ngModel)]="hotel.hcontact" minlength="10" maxlength="10" pattern="[0-9]{10}" required /><br><br>
+
+                    <label><b>Hotel Description</b> </label><br>
+                    <input class="form-control" placeholder="Provide full description" type="text" name="HotelDescription" [(ngModel)]="hotel.hdescription" required /><br><br>
+
+                    <label><b>Hotel Rating</b> </label><br>
+                    <input class="form-control" placeholder="1 to 10" type="number" name="HotelRating" [(ngModel)]="hotel.hrating" min="1" max="10" required /><br><br>
+
+                    <label><b>Hotel Image Url</b> </label><br>
+                    <input class="form-control" placeholder="Image link" type="text" name="HotelImage" [(ngModel)]="hotel.himage" required /><br><br>
+
+                    <div *ngIf="hotelForm.form.invalid && hotelForm.form.touched">
+                        <p>Please ensure all fields meet the requirements.</p>
+                    </div>
+
+                    <div class="text-center">
+                        <button type="submit" [disabled]="!hotelForm.form.valid">Add Hotel</button><br>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<link rel="stylesheet" href="add-hotel.component.css">

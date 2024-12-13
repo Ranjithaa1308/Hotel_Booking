@@ -1,0 +1,132 @@
+.guest-form {
+    max-width: 30vw;
+    margin: 40px auto;
+    padding: 25px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(to bottom, #ffffff, #f4f4f4);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.guest-form h2 {
+    text-align: center;
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+.guest-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 13px;
+    color: #34495e;
+}
+
+.guest-form input,
+.guest-form select {
+    margin-inline: auto;
+    padding: 10px 12px;
+    margin-bottom: 15px;
+    border: 1px solid #dfe4ea;
+    border-radius: 6px;
+    background-color: #f8f9fa;
+    font-size: 13px;
+    transition: all 0.3s ease;
+}
+
+.guest-form input:focus,
+.guest-form select:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 4px rgba(52, 152, 219, 0.4);
+    outline: none;
+    background-color: #ffffff;
+}
+
+.guest-form button {
+    display: inline-block;
+    width: auto;
+    padding: 10px 15px;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #ffffff;
+    background: linear-gradient(to right, #3498db, #2c3e50);
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.guest-form button:hover {
+    background: linear-gradient(to right, #2c3e50, #3498db);
+    transform: translateY(-2px);
+}
+
+.guest-form button:active {
+    transform: translateY(0);
+}
+
+.guest-form p {
+    font-size: 14px;
+    color: #2c3e50;
+    font-weight: 500;
+    margin-top: 10px;
+}
+
+.guest-form div {
+    margin-bottom: 20px;
+}
+
+.guest-form .total-price {
+    font-size: 16px;
+    font-weight: 700;
+    color: #e74c3c;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.guest-form .date-calculation {
+    font-size: 15px;
+    color: #27ae60;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.navbarda {
+    padding: 10px;
+}
+
+.navbarbtn {
+    margin: 0 5px;
+    font-size: 14px;
+}
+
+.container-fluid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbarda ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbarda button {
+    margin: 0 5px;
+    font-size: 14px;
+    color: white;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.navbarda button:hover {
+    text-decoration: underline;
+}

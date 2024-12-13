@@ -1,0 +1,56 @@
+<nav class="navbar navbar-expand-sm navbarda" style="background-color:black">
+  <div class="container-fluid">
+    <button onclick="history.back()" class="btn btn-primary navbarbtn" style="width:80;height: 35;">Go Back</button>
+      <!-- <ul class="nav navbar-nav">
+        <button id="home" (click)="home()"><i class="fa fa-home"></i>Home</button>
+        <button id="home" (click)="contactUs()"> <i class="fa fa-phone"></i>Contact</button>
+      </ul> -->
+    <button (click)="logOut()" class="btn btn-danger navbarbtn">Log out</button>
+  </div>
+</nav>
+<div class="guest-form">
+  <h2>Booking Page</h2>
+  <form (ngSubmit)="paymentInfo()" #guestForm="ngForm">
+    <div>
+      <label for="cid">Customer Id</label>
+      <input type="text" id="cid" [(ngModel)]="curruserId" name="cid" readonly/>
+    </div>
+    <div>
+      <label for="cname">Customer Name</label>
+      <input type="text" id="cname" [(ngModel)]="currname" name="cname" readonly/>
+    </div>
+    <!-- <div>
+      <label for="caddress">Customer Address</label>
+      <input type="text" id="caddress" [(ngModel)]="booking.caddress" name="caddress" />
+    </div>
+    <div>
+      <label for="ccontact">Customer Contact</label>
+      <input type="text" id="ccontact" [(ngModel)]="booking.ccontact" name="ccontact" />
+    </div> -->
+    
+    <div>
+      <label for="carrival_date">Checkin Date</label>
+      <input type="date" id="checkin_date" [(ngModel)]="booking.checkin_date" name="carrival_date" [min]="currdate" />
+    </div>
+    <div>
+      <label for="cdeparture_date">Checkout Date</label>
+      <input type="date" id="checkout_date" [(ngModel)]="booking.checkout_date" name="cdeparture_date"/>
+    </div>
+
+    <div>
+      <select class="form-control" name="room_type" required id="room_type" (change)="onRoomTypeChange($event)">
+        <option value="" disabled selected>Select a Room Type</option>
+        <option *ngFor="let roomItem of room" [value]="roomItem.rId">{{ roomItem.room_type }}</option>
+      </select>
+      <br><br>
+    </div>
+    <div>
+      <p>Total Price: {{ totalPrice | currency }}</p>
+    </div>
+    <div *ngIf="dateCount !== null">
+      <p>The total number of days (inclusive) is {{ dateCount }} days.</p>
+    </div>
+    <button type="Payment">Go to Payment Page</button>
+  </form>
+</div>
+<link rel="stylesheet" href="booking.component.css">

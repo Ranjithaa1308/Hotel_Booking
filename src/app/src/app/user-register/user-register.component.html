@@ -1,0 +1,37 @@
+<div class="body">
+    <div class="container">
+        <!-- <small *ngIf="inValidLogic">{{errorMessage}}</small><br> -->
+        <button (click)="goBack()" class="btn btn-primary">Go Back</button>
+        <div class="row justify-content-center">
+            <div class="col-md-5 border p-5 center">
+                <form class="w-100" #registerForm="ngForm" (ngSubmit)="Signup()"><br><br>
+                    <h2 class="text-center fs-1"><b>Signup Page</b></h2><br>
+
+                    <label><b>Name</b></label><br>
+                    <input class="form-control" placeholder="Enter Full Name" type="text" name="name" #name="ngModel" minlength="3" [(ngModel)]="user.name" minlength="3" maxlength="45"  /><div *ngIf="name.invalid && (name.dirty || name.touched)">
+                        <div *ngIf="name.errors?.['minlength']" class="error-message">
+                          Must contain at least 3 characters.
+                        </div>
+                      </div><br><br>
+
+                    <label><b>Email</b> </label><br>
+                    <input class="form-control" placeholder="abc123@gmail.com" type="text" name="Email" [(ngModel)]="user.email"  /><br><br>
+
+                    <label><b>Password</b> </label><br>
+                    <input type="password" name="password" class="form-control" placeholder="Password" [(ngModel)]="user.password"  /><br><br>
+
+                    <div class="text-center">
+                        <button type="submit" [disabled]="registerForm.invalid" class="btn btn-success ">SignUp</button><br><br>
+                    </div>
+                    <nav>
+                        <label>Already registered user ? Go to Loginpage</label>
+                        <ul class = "navbar-nav">
+                            <button class="btn btn-success "(click)="userLogin()">Login page</button>
+                        </ul>
+                    </nav>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<link rel="stylesheet" href="user-register.component.css">

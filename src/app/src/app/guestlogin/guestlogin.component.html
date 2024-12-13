@@ -1,0 +1,23 @@
+<div class="body">
+    <div class="container">
+        <button (click)="goBack()" class="btn btn-primary">Go Back</button>
+        <div class="row justify-content-center">
+            <div class="col-md-5 border p-5 center">
+                <form class="w-100" #registerForm="ngForm" (ngSubmit)="userLogin()">
+                    <h2 class="text-center fs-1"><b>Login Page</b></h2><br>
+
+                    <label><b>User Email</b></label><br>
+                    <input class="form-control" placeholder="Enter your email" type="text" name="Name" [(ngModel)]="user.email" required /><br><br>
+
+                    <label><b>Password</b> </label><br>
+                    <input class="form-control" placeholder="Enter Password" type="password" name="Password" [(ngModel)]="user.password" required /><br><br>
+
+                    <div class="text-center">
+                        <button type="submit" [disabled]="registerForm.invalid" class="btn btn-success ">Login</button><br>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<link rel="stylesheet" href="guestlogin.component.css">

@@ -1,0 +1,47 @@
+<!-- two way binding -->
+<header>
+    <nav class="navbar navbar-expand-md navbar-dark bg-primary  center">
+        <div>
+            <i class='fas fa-shipping-fast Color-white' style='font-size:24px '></i>
+            <strong>
+                <h1><a class="navbar-brand text-white"> ROOM DETAILS</a></h1>
+            </strong>
+        </div>
+    </nav>
+</header>
+
+<div class="body">
+
+    <div class="container">
+        <!-- <small *ngIf="inValidLogic">{{errorMessage}}</small><br> -->
+
+        <div class="row justify-content-center">
+            <div class="col-md-5 border p-5 center">
+                <form class="w-100" #registerForm="ngForm" (ngSubmit)="roomdetails()">
+                    <h2 class="text-center fs-1"><b>ROOM DETAILS</b></h2><br>
+                    <select class="form-control" name="room_type" [(ngModel)]="room.room_type" required>
+                        <option value="" disabled selected>Select a Room Type</option>
+                        <option *ngFor="let roomItem of room" [value]="roomItem.room_type">{{ roomItem.room_type }}
+                        </option>
+                    </select>
+                    <br><br>
+                    <!-- <label><b>Price per night</b> </label><br>
+                    <input class="form-control" placeholder="Price per night" type="text" name="Price per night" [(ngModel)]="room.price_per_night" required/><br><br> -->
+
+                    <label><b>Avaliability Status</b> </label><br>
+                    <p> {{ room.availability_status }}</p>
+                    <!-- <input class="form-control" placeholder="Avaliability Status" type="text" name="Avaliability Status" [(ngModel)]="room.avaliability_status" minlength="10"/><br><br> -->
+
+                    <label><b>Total price according to room type</b> </label><br>
+                    <p> {{ room.availability_status }}</p>
+                    
+                    <div class="text-center">
+                        <button class="btn btn-success ">roomdetails</button>
+                        <button class="btn btn-success " (click)="bookingbtn()">Booking</button><br>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<link rel="stylesheet" href="room.component.css">

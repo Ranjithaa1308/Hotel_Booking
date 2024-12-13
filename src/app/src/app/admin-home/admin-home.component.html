@@ -1,0 +1,22 @@
+<nav class="navbar navbar-expand-sm navbarda" style="background-color:black">
+  <div class="container-fluid">
+    <div class="row justify-content-center">
+        <button (click)="goBack()" class="btn btn-primary">Go Back</button>
+        <div class="col-md-5 border p-5 center">
+            <form class="w-100" #registerForm="ngForm" (ngSubmit)="adminlogin()">
+                <h2 class="text-center fs-1"><b></b></h2><br>
+
+                <label><b>Admin Name</b></label>
+                <input class="form-control" placeholder="Enter your Name" type="text" name="Name" [(ngModel)]="admin.adminName"required /><br><br>
+
+                <label><b>Password</b> </label>
+                <input class="form-control" placeholder="Enter Password" type="password" name="Password" [(ngModel)]="admin.adminPassword" required /><br><br>
+
+                <div class="text-center">
+                    <button type="submit" [disabled]="registerForm.invalid" class="btn btn-success ">Admin Login</button><br>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<link rel="stylesheet" href="admin-home.component.css">

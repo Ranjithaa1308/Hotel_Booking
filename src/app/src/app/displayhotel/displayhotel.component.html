@@ -1,0 +1,26 @@
+<nav class="navbar navbar-expand-sm navbarda" style="background-color:black">
+  <div class="container-fluid">
+      <button onclick="history.back()" class="btn btn-primary navbarbtn" style="width:80;height: 35;">Go Back</button>
+      <!-- <ul class="nav navbar-nav">
+        <button id="home" (click)="home()"><i class="fa fa-home"></i>Home</button>
+        <button id="home" (click)="contactUs()"> <i class="fa fa-phone"></i>Contact</button>
+      </ul> -->
+      <button (click)="logOut()" class="btn btn-danger navbarbtn">Log out</button>
+  </div>
+</nav>
+<div class="hotelList">
+  <div *ngFor="let hotelItem of hotelList" class="hotelcard">
+    <img [src]="hotelItem.himage" alt="Hotel Image" class="hotel" />
+    <div>
+      <h3>{{ hotelItem.hname}}</h3>
+      <p>{{ hotelItem.hdescription }}</p>
+      <span>Ratings {{ hotelItem.hratings }}</span> |
+      <span>City {{ hotelItem.hcity }}</span>
+      <br><br>
+      <button type="button" (click)="updatehotel(hotelItem.hId)">updateHotel</button>
+      <button type="button" (click)="deleteHotel(hotelItem.hId)">deleteHotel</button>
+      <br><br><br>
+    </div>
+  </div>
+</div>
+<link rel="stylesheet" href="displayhotel.component.css">
